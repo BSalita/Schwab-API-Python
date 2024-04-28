@@ -3,11 +3,15 @@ This file stores variables to be used between python files and functions some
 Github: https://github.com/tylerebowers/Schwab-API-Python
 """
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 class credentials:
     # Schwab account credentials
-    appKey = "Your App Key"
-    appSecret = "Your App Secret"
+    appKey = os.getenv("appKey")
+    appSecret = os.getenv("appSecret")
     callbackUrl = "https://127.0.0.1"
     accountNumber = ""
     encryptedId = ""
